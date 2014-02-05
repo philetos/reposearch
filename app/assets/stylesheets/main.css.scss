@@ -1,0 +1,18 @@
+.red {
+  background-color: red
+}
+
+.grey {
+  background-color: grey
+}
+
+.center {
+  text-align: center
+}
+
+.login-button-container {
+  @extend .col-lg-4;
+  @extend .col-lg-offset-4;
+  text-align: center;
+  padding-top: 100px;
+}
