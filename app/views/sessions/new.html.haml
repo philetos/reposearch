@@ -1,4 +1,8 @@
-.container
-  .row
-    .login-button-container
-      = link_to "Login with Github", root_path, class: "btn btn-primary btn-lg"
+%main{:role => "main"}
+  .login-main-container
+    .row
+      .login-logo-container
+        = fa_icon "github-square", style: "font-size: 200px"
+        %h1 GitHub RepoSearch
+      .login-button-container
+        = link_to "Login with Github", github_authorization_path, class: "btn btn-primary btn-lg"

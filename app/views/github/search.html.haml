@@ -1,0 +1,49 @@
+.search-bar-container
+  .row
+    .login-button-container
+      = bootstrap_form_for :query, url: github_search_path do |f|
+        .container-fluid
+          .row
+            .col-lg-5.col-lg-offset-3.col-md-5.col-md-offset-3.col-sm-5.col-sm-offset-3.col-xs-5.col-xs-offset-3
+              = f.text_field :text, hide_label: true
+            .col-lg-1.col-md-1.col-sm-1.col-xs-1
+              = f.submit "Search"
+.container
+  .row
+    #filter-container.col-lg-3.col-md-3.col-sm-3.col-xs-3.grey
+      = "#{@result.total_count} items found"
+    / #results-container.col-lg-9.col-md-9.col-sm-9.col-xs-9.red
+    /   - @result[:items].each do |e|
+    /     .list-group
+    /       %a.list-group-item{href: "#"}
+    /         %h4.list-group-item-heading= e[:full_name]
+    /         %p.list-group-item-text= e[:description].truncate(100)
+
+    / .btn-group
+    /   %button.btn.btn-default{type: "button"} Sort
+    /   %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", type: "button"}
+    /     %span.caret
+    /     %span.sr-only Toggle Dropdown
+    /   %ul.dropdown-menu{role: "menu"}
+    /     %li
+    /       %a{href: "#"} Action
+    /     %li
+    /       %a{href: "#"} Another action
+    /     %li
+    /       %a{href: "#"} Something else here
+    /     %li.divider
+    /     %li
+    /       %a{href: "#"} Separated link
+    %ul.repolist.col-lg-9.col-md-9.col-sm-9.col-xs-9.red
+      .sort-bar
+        %h4= "We've found #{@result.total_count} matching results"
+      - @result[:items].each do |e|
+        %li
+          %ul.repo-stats
+            %li= e[:language]
+            %li.stargazers
+              = fa_icon "star", text: e[:stargazers_count], style: "font-size: 14px"
+
+          %h3.repolist-name= e[:full_name]
+          .description= e[:description].truncate(100)
+          .updated-at= "Last updated #{time_ago_in_words(e[:updated_at])} ago"
