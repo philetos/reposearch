@@ -1,4 +1,5 @@
 $blue: #428bca;
+$blue-light: #eee;
 
 .red {
   #background-color: red;
@@ -13,6 +14,10 @@ $blue: #428bca;
 
 .center {
   text-align: center
+}
+
+#language-panel {
+  padding-top: 50px;
 }
 
 .login-main-container {
@@ -34,22 +39,6 @@ $blue: #428bca;
   padding-top: 20px;
 }
 
-.search-bar-container {
-  @extend .container;
-  background-color: #eee;
-  width: 100%;
-  margin-top: 51px
-}
-.sort-bar {
-  border-bottom: 1px solid #f1f1f1;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-
-  h4 {
-    margin: 0;
-    color: $blue;
-  }
-}
 .repolist {
 
   padding: 50px;
@@ -104,6 +93,29 @@ $blue: #428bca;
     }
   }
 }
+
+.search-bar-container {
+  @extend .container;
+  background-color: $blue-light;
+  width: 100%;
+  margin-top: 51px
+}
+
+.sort-bar {
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+
+  h4 {
+    margin: 0;
+    color: $blue;
+  }
+}
+
+.username-nav-item {
+  margin: 7px 20px 0 20px;
+}
+
 
 
 

@@ -1,0 +1,7 @@
+%h4 Languages
+%ul.nav.nav-pills.nav-stacked
+  - language_count(@result).each do |language, count|
+    %li
+      %a{href: "#"}
+        %span.badge.pull-right= count
+        = language

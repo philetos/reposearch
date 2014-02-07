@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if @session.save
       flash[:success] = "Hello #{current_user.first_name}, your access token is: #{current_user.github_access_token}!"
-      redirect_to home_path
+      redirect_to github_search_path
     else
       redirect_to root_path, alert: "Unable to authorize"
     end
