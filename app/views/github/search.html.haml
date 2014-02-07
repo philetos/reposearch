@@ -18,31 +18,20 @@
     /       %a.list-group-item{href: "#"}
     /         %h4.list-group-item-heading= e[:full_name]
     /         %p.list-group-item-text= e[:description].truncate(100)
-
-    / .btn-group
-    /   %button.btn.btn-default{type: "button"} Sort
-    /   %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", type: "button"}
-    /     %span.caret
-    /     %span.sr-only Toggle Dropdown
-    /   %ul.dropdown-menu{role: "menu"}
-    /     %li
-    /       %a{href: "#"} Action
-    /     %li
-    /       %a{href: "#"} Another action
-    /     %li
-    /       %a{href: "#"} Something else here
-    /     %li.divider
-    /     %li
-    /       %a{href: "#"} Separated link
-    %ul.repolist.col-lg-9.col-md-9.col-sm-9.col-xs-9.red
+    %ul#results-container.repolist.col-lg-9.col-md-9.col-sm-9.col-xs-9.red
       .sort-bar
-        %h4= "We've found #{@result.total_count} matching results"
+        .row
+          .col-lg-6
+            %h4= "We've found #{number_with_delimiter(@result.total_count)} matching results"
+            %h6= "Search Input: #{params[:query][:text]}"
+
+          = render "shared/sort_button"
       - @result[:items].each do |e|
-        %li
+        .repolist-li
           %ul.repo-stats
             %li= e[:language]
             %li.stargazers
-              = fa_icon "star", text: e[:stargazers_count], style: "font-size: 14px"
+              = fa_icon "star", text: number_with_delimiter(e[:stargazers_count]), style: "font-size: 14px"
 
           %h3.repolist-name= e[:full_name]
           .description= e[:description].truncate(100)

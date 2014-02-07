@@ -10,5 +10,8 @@
     .collapse.navbar-collapse
       - if current_user
         %ul.nav.navbar-nav.navbar-right
+          %li{style: "margin: 7px 20px 0 20px"}
+            %h5= current_user.username.downcase
           %li
-            = link_to "Logout", logout_path
+            = link_to logout_path do
+              = fa_icon "sign-out", text: "Logout"
