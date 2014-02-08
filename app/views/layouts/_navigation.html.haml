@@ -10,7 +10,7 @@
     .collapse.navbar-collapse
       - if current_user
         %ul.nav.navbar-nav.navbar-right
-          %li{style: "margin: 7px 20px 0 20px"}
+          %li.username-nav-item
             %h5= current_user.username.downcase
           %li
             = link_to logout_path do

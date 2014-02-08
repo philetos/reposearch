@@ -1,4 +1,5 @@
 $blue: #428bca;
+$grey: #eee;
 
 .red {
   #background-color: red;
@@ -13,6 +14,10 @@ $blue: #428bca;
 
 .center {
   text-align: center
+}
+
+#language-panel {
+  padding-top: 50px;
 }
 
 .login-main-container {
@@ -34,22 +39,6 @@ $blue: #428bca;
   padding-top: 20px;
 }
 
-.search-bar-container {
-  @extend .container;
-  background-color: #eee;
-  width: 100%;
-  margin-top: 51px
-}
-.sort-bar {
-  border-bottom: 1px solid #f1f1f1;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-
-  h4 {
-    margin: 0;
-    color: $blue;
-  }
-}
 .repolist {
 
   padding: 50px;
@@ -103,6 +92,57 @@ $blue: #428bca;
       padding-left: 15px;
     }
   }
+}
+
+.search-bar-container {
+  @extend .container;
+  background-color: $grey;
+  width: 100%;
+  margin-top: 51px
+}
+
+.sort-bar {
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+
+  h4 {
+    margin: 0;
+    color: $blue;
+  }
+}
+
+.username-nav-item {
+  margin: 7px 20px 0 20px;
+}
+
+/* -----------------------------------
+    Loading Screen
+----------------------------------- */
+.loading-screen {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    padding-top: 100px;
+    // top:        0;
+    // left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .9 ) 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+.loading .loading-screen {
+    display: block;
 }
 
 

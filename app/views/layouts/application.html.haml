@@ -13,4 +13,6 @@
       /= render 'layouts/messages'
       = yield
 
-= params.inspect
+    = render 'shared/loading_indicator'
+
+/= params.inspect

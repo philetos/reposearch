@@ -1,0 +1,17 @@
+.sort-bar
+  .row
+    .col-lg-6
+      %h4= "We've found #{number_with_delimiter(@result.total_count)} matching results"
+      %h6= "Search Input: #{params[:query][:text]}"
+
+    = render "shared/stargazers_sort"
+- @result[:items].each do |e|
+  .repolist-li
+    %ul.repo-stats
+      %li= e[:language]
+      %li.stargazers
+        = fa_icon "star", text: number_with_delimiter(e[:stargazers_count]), style: "font-size: 14px"
+
+    %h3.repolist-name= e[:full_name]
+    .description= e[:description].truncate(100)
+    .updated-at= "Last updated #{time_ago_in_words(e[:updated_at])} ago"

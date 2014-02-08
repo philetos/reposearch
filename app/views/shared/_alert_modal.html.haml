@@ -1,0 +1,8 @@
+#alertModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "alertModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#alertModalLabel.modal-title.center= fa_icon "exclamation-triangle",style: "font-size: 30px; color: #f7bd2a"
+      .modal-body.center
+        %h3 Please enter search criteria!

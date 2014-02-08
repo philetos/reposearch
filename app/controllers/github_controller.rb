@@ -9,6 +9,14 @@ class GithubController < ApplicationController
 
   def search
     github  = Github.new oauth_token: current_user.github_access_token, auto_paginate: true
-    @result = github.search.repos(q: params[:query][:text]).body
+
+    if params[:query].present?
+      @result = github.search.repos(q: params[:query][:text].presence, sort: params[:query][:sort].presence, order: params[:query][:order].presence ).body
+    end
+
+    respond_to do |format|
+      format.js { render }
+      format.html 
+    end
   end
 end
