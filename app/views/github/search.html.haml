@@ -1,11 +1,11 @@
 .search-bar-container
   .row
     .login-button-container
-      = bootstrap_form_for :query, url: github_search_path, html: { id: "search-form" } do |f|
+      = bootstrap_form_for :query, url: github_search_path,  html: { id: "search-form" } do |f|
         .container-fluid
           .row
             .col-lg-5.col-lg-offset-3.col-md-5.col-md-offset-3.col-sm-5.col-sm-offset-3.col-xs-5.col-xs-offset-3
-              = f.text_field :text, hide_label: true
+              = f.text_field :text, hide_label: true, placeholder: "Go ahead, look something up!"
             .col-lg-1.col-md-1.col-sm-1.col-xs-1
               = f.submit "Search"
 = render "shared/search_results"
