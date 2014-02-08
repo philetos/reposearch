@@ -1,5 +1,5 @@
 $blue: #428bca;
-$blue-light: #eee;
+$grey: #eee;
 
 .red {
   #background-color: red;
@@ -96,7 +96,7 @@ $blue-light: #eee;
 
 .search-bar-container {
   @extend .container;
-  background-color: $blue-light;
+  background-color: $grey;
   width: 100%;
   margin-top: 51px
 }
