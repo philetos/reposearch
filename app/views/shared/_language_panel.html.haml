@@ -1,7 +1,6 @@
-%h4 Languages
+%h4 Language Filter
 %ul.nav.nav-pills.nav-stacked
   - language_count(@result).each do |language, count|
     %li
-      %a{href: "#"}
-        %span.badge.pull-right= count
+      = link_to github_search_path(query: { text: "#{params[:query][:text].presence}+language:#{language}"}), method: :post, remote: true do
         = language

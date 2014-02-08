@@ -11,10 +11,11 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem "font-awesome-rails"
 gem 'bootstrap_form'
+gem 'bootstrap-sass'
+gem 'sass-rails'
 
 group :assets do 
-  gem 'bootstrap-sass'
-  gem 'sass-rails'
+
   gem 'uglifier', '>= 1.3.0'
 end
 

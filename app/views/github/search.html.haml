@@ -1,33 +1,11 @@
 .search-bar-container
   .row
     .login-button-container
-      = bootstrap_form_for :query, url: github_search_path do |f|
+      = bootstrap_form_for :query, url: github_search_path, html: { id: "search-form" } do |f|
         .container-fluid
           .row
             .col-lg-5.col-lg-offset-3.col-md-5.col-md-offset-3.col-sm-5.col-sm-offset-3.col-xs-5.col-xs-offset-3
               = f.text_field :text, hide_label: true
             .col-lg-1.col-md-1.col-sm-1.col-xs-1
               = f.submit "Search"
-.container
-  .row
-    - if @result.present?
-      #language-panel.col-lg-3.col-md-3.col-sm-3.col-xs-3
-        = render "shared/language_panel"
-      %ul#results-container.repolist.col-lg-9.col-md-9.col-sm-9.col-xs-9.red
-        .sort-bar
-          .row
-            .col-lg-6
-              %h4= "We've found #{number_with_delimiter(@result.total_count)} matching results"
-              %h6= "Search Input: #{params[:query][:text]}"
-
-            = render "shared/sort_button"
-        - @result[:items].each do |e|
-          .repolist-li
-            %ul.repo-stats
-              %li= e[:language]
-              %li.stargazers
-                = fa_icon "star", text: number_with_delimiter(e[:stargazers_count]), style: "font-size: 14px"
-
-            %h3.repolist-name= e[:full_name]
-            .description= e[:description].truncate(100)
-            .updated-at= "Last updated #{time_ago_in_words(e[:updated_at])} ago"
+= render "shared/search_results"

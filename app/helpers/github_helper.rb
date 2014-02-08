@@ -15,6 +15,6 @@ module GithubHelper
       end
     end
 
-    lang_count
+    lang_count.sort_by(&:last).reverse
   end
 end

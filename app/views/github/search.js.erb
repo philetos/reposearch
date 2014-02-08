@@ -1,0 +1,5 @@
+// Clears Help Form first from any prior requests
+$('#repo-container').html(' ')
+
+// Sets up Member to be Helped using @helper and @member from HelpsController
+$('#repo-container').append("<%= escape_javascript(render :partial => 'shared/repo_panel', locals: { result: @result })%>");
