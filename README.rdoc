@@ -1,4 +1,4 @@
-# Github Reposearch
+#Github Reposearch
 
 A basic web app that uses the GitHub Search Api to query repositories based on user input and displays the following data / options:
 
