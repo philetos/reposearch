@@ -3,5 +3,5 @@
   %ul.nav.nav-pills.nav-stacked
     - language_count(@result).each do |language, count|
       %li
-        = link_to github_search_path(query: { text: "#{params[:query][:text].presence}+language:#{language}"}), method: :post, remote: true do
+        = link_to github_search_path(query: { text: "#{params[:query][:text].presence}+language:#{language}"}), remote: true do
           = language

@@ -1,0 +1,25 @@
+- if @result.present?
+  .repolist-header 
+    .row
+      .col-lg-6
+        %h4= "We've found #{number_with_delimiter(@result.total_count)} matching results"
+        %h6= "Search Input: #{params[:query][:text].presence}"
+
+      = render "partials/sort_menu"
+
+  = render "partials/paginator"
+
+  - @result[:items].each do |repo|
+    .repo
+      %ul.repo-stats
+        %li= repo[:language]
+        %li.stargazers
+          = fa_icon "star", text: number_with_delimiter(repo[:stargazers_count]), style: "font-size: 14px"
+
+      = link_to repo[:html_url], target: :blank do 
+        %h3.repo-name= repo[:full_name]
+      - if repo[:description].present?
+        .repo-description= repo[:description].truncate(100)
+      .repo-updated-at= "Last updated #{time_ago_in_words(repo[:updated_at])} ago"
+
+  = render "partials/paginator"

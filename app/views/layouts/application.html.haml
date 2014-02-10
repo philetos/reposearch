@@ -8,11 +8,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    = render 'partials/loading_indicator'
     %header
       = render 'layouts/navigation'
-      /= render 'layouts/messages'
       = yield
-
-    = render 'shared/loading_indicator'
-
-/= params.inspect

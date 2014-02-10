@@ -15,7 +15,6 @@ gem 'bootstrap-sass'
 gem 'sass-rails'
 
 group :assets do 
-
   gem 'uglifier', '>= 1.3.0'
 end
 

@@ -1,8 +1,7 @@
 $(document).ready( function() {
-
+  
   function validateForm(){
     var query = document.forms["search-form"]["query_text"].value;
-
     if ( query == null || query == "" ){
       return false;
     }
@@ -27,5 +26,6 @@ $(document).ready( function() {
   $(document).ajaxComplete(function(event, request, settings) {
     $('#loading-indicator').removeClass("loading"); 
     $('#loading-indicator').hide();
+    window.scrollTo(0,0);
   });
 });

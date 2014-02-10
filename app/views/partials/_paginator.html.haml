@@ -1,0 +1,7 @@
+%ul.pager
+  - if @result.links.prev.present?
+    %li
+      = link_to "< Previous Page", github_paginate_path(link: @result.links.prev, query: params[:query]), remote: true
+  - if @result.links.next.present?
+    %li
+      = link_to "Next Page >", github_paginate_path(link: @result.links.next, query: params[:query]), remote: true

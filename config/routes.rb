@@ -7,6 +7,7 @@ Reposearch::Application.routes.draw do
 
   match '/github_authorization', to: "github#authorize",  as: :github_authorization
   match '/search',               to: "github#search",     as: :github_search
+  match '/paginate',             to: "github#paginate",   as: :github_paginate
 
   match "/*url", to: "base#routing_error"
 end
