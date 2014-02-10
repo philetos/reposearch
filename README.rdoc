@@ -6,4 +6,4 @@ A basic web app that uses the GitHub Search Api to query repositories based on u
 
 - A filtering of the results based on the languages returned 
 
-- Sorting by stars in either asc or desc ordere
+- Sorting by stars in either asc or desc order
