@@ -17,15 +17,15 @@ $(document).ready( function() {
   });
   
 
-  // Loading Gif
+  // Searching Gif
   $(document).ajaxSend(function(event, request, settings) {
-    $('#loading-indicator').addClass("loading"); 
-    $('#loading-indicator').show();
+    $('#searching-indicator').addClass("searching"); 
+    $('#searching-indicator').show();
   });
 
   $(document).ajaxComplete(function(event, request, settings) {
-    $('#loading-indicator').removeClass("loading"); 
-    $('#loading-indicator').hide();
+    $('#searching-indicator').removeClass("searching"); 
+    $('#searching-indicator').hide();
     window.scrollTo(0,0);
   });
 });

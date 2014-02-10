@@ -10,7 +10,7 @@ $grey: #eee;
   padding-top: 50px;
 }
 
-.loading-screen {
+.searching-screen {
     display:    none;
     position:   fixed;
     z-index:    1000;
@@ -22,11 +22,11 @@ $grey: #eee;
                 no-repeat;
 }
 
-.loading {
+.searching {
     overflow: hidden;   
 }
 
-.loading .loading-screen {
+.searching .searching-screen {
     display: block;
 }
 
